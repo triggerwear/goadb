@@ -4,8 +4,8 @@ import (
 	"testing"
 
 	"github.com/stretchr/testify/assert"
-	"github.com/zach-klippenstein/goadb/internal/errors"
-	"github.com/zach-klippenstein/goadb/wire"
+	"github.com/triggerwear/goadb/internal/errors"
+	"github.com/triggerwear/goadb/wire"
 )
 
 func TestGetAttribute(t *testing.T) {

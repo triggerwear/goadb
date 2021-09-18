@@ -1,6 +1,6 @@
 package adb
 
-import "github.com/zach-klippenstein/goadb/internal/errors"
+import "github.com/triggerwear/goadb/internal/errors"
 
 // DeviceState represents one of the 3 possible states adb will report devices.
 // A device can be communicated with when it's in StateOnline.
@@ -13,6 +13,7 @@ type DeviceState int8
 const (
 	StateInvalid DeviceState = iota
 	StateUnauthorized
+	StateAuthorizing
 	StateDisconnected
 	StateOffline
 	StateOnline
@@ -22,6 +23,7 @@ var deviceStateStrings = map[string]DeviceState{
 	"":             StateDisconnected,
 	"offline":      StateOffline,
 	"device":       StateOnline,
+	"authorizing":  StateAuthorizing,
 	"unauthorized": StateUnauthorized,
 }
 
