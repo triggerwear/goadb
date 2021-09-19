@@ -83,5 +83,10 @@ func parseDeviceAttributes(fields []string) map[string]string {
 // Parses a key:val pair and returns key, val.
 func parseKeyVal(pair string) (string, string) {
 	split := strings.Split(pair, ":")
+
+	if len(split) == 1 {
+		return split[0], ""
+	}
+
 	return split[0], split[1]
 }

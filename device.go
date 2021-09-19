@@ -52,6 +52,11 @@ func (c *Device) State() (DeviceState, error) {
 		if strings.Contains(err.Error(), "unauthorized") {
 			return StateUnauthorized, nil
 		}
+
+		if strings.Contains(err.Error(), "authorizing") {
+			return StateAuthorizing, nil
+		}
+
 		return StateInvalid, wrapClientError(err, c, "State")
 	}
 	state, err := parseDeviceState(attr)
